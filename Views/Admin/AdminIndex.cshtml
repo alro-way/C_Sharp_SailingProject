@@ -1,0 +1,111 @@
+@{
+     ViewData["Title"] = "Admin Page"; 
+}
+@using System.ComponentModel.DataAnnotations; 
+@using C_Sharp_SailingTemplate.Models; 
+@model UserWrapper;
+
+
+
+<section class="page-section" id="map_section">
+    <div class="row">
+        <div class="col-md-3 mx-auto text-center">
+            @* <h2 class="section-heading text-uppercase">Registration</h2>
+            <form asp-action="CreateUser" asp-controller="Admin" method="post">
+                <p>
+                    <label asp-for="NewUser.FirstName">First Name:</label>
+                </p>
+                <p>
+                    <input asp-for="NewUser.FirstName" type="text">
+                </p>
+                <p><span class="valid" asp-validation-for="NewUser.FirstName"></span></p>
+
+                <p>
+                    <label asp-for="NewUser.LastName">Last Name:</label>
+                </p>
+                <p>
+                    <input asp-for="NewUser.LastName" type="text">
+                </p>
+                <p><span class="valid" asp-validation-for="NewUser.LastName"></span></p>
+
+                <p>
+                    <label asp-for="NewUser.Status">Status:</label>
+                </p>
+                <p>
+                    <input asp-for="NewUser.Status" type="text">
+                </p>
+                <p><span class="valid" asp-validation-for="NewUser.Status"></span></p>
+
+                <p>
+                    <label asp-for="NewUser.Email">Email:</label>
+                </p>
+                <p>
+                    <input asp-for="NewUser.Email" type="email">
+                </p>
+                <p><span class="valid" asp-validation-for="NewUser.Email"></span></p>
+
+                <p>
+                    <label asp-for="NewUser.Password">Password:</label>
+                </p>
+                <p>
+                    <input asp-for="NewUser.Password" type="password">
+                </p>
+                <p><span class="valid" asp-validation-for="NewUser.Password"></span></p>
+
+                <p>
+                    <label asp-for="NewUser.Confirm">Password confirmation:</label>
+                </p>
+                <p>
+                    <input asp-for="NewUser.Confirm" type="password">
+                </p>
+                <p><span class="valid" asp-validation-for="NewUser.Confirm"></span></p>
+
+                <button>Sing up</button>
+            </form> *@
+
+            <h2 class="section-heading text-uppercase">Login</h2>
+            <form asp-action="LoginUser" asp-controller="Admin" method="post">
+                <p>
+                    <label asp-for="NewLogin.LoginEmail">Email:</label>
+                </p>
+                <p>
+                    <input class="form-control" asp-for="NewLogin.LoginEmail">
+                </p>
+                <p><span class="valid" asp-validation-for="NewLogin.LoginEmail"></span></p>
+
+                <p>
+                    <label asp-for="NewLogin.LoginPassword">Password:</label>
+                </p>
+                <p>
+                    <input class="form-control"  asp-for="NewLogin.LoginPassword">
+                </p>
+                <p><span class="valid" asp-validation-for="NewLogin.LoginPassword"></span></p>
+                <p>
+                    <input class="btn btn-primary btn-xl text-uppercase" type="submit" value="Login">
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!--FOR DROP MENU TEST- Countries only 142-->
+           @* @using (Html.BeginForm()) 
+        {
+            @Html.AntiForgeryToken()
+            
+            <div class="form-horizontal">
+                <hr />
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Select Country</label>
+                    <div class="col-md-10">
+                        @Html.DropDownList("CountryList",new SelectList(ViewBag.CountryList),new {@class = "form-control" })
+                    </div>
+                </div>
+                
+            </div>
+                        <p> @ViewBag.RCount </p>
+
+        } *@
+
+
+        
+</section>

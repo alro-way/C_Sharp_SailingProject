@@ -1,0 +1,58 @@
+
+<section class="page-section" id="contact" style="background-image:url('../img/contact_bg.jpg')">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Contact Me</h2>
+          <h3 class="section-subheading text-muted"></h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12" >
+            <div class="col-md-6 mx-auto" >
+              <div class="form-group">
+                <input class="form-control" id="name" type="text" placeholder="Your Name *" >
+                <p class="help-block text-danger"></p>
+            
+              <div class="form-group">
+                <textarea class="form-control" id="message" placeholder="Your Message *" ></textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-lg-12 text-center">
+              <div id="success"></div>
+              <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" onclick="SendEmail()">Send Message</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <script>
+    function SendEmail(){
+      $.ajax(
+      {
+        type: "POST",
+        url: '@Url.Action("SendEmail", "MailSender")',
+        data: {
+          Name: $("#name").val(),
+          Email: $("#email").val(),
+          Message: $("#message").val()
+        },
+        error: function (result) {
+          console.log(result);
+        },
+        success: function (result) {
+          alert(result);
+          $("#name").val("");
+          $("#email").val("");
+          $("#message").val("");
+        }
+      });
+    }
+  </script>
+  

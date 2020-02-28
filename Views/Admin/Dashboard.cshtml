@@ -1,0 +1,158 @@
+@{
+    ViewData["Title"] = "Dashboard Page";
+}
+
+<section class="page-section" id="map_section">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Hello, @ViewBag.UserName</h2>
+        </div>
+    </div>
+</section>
+
+<!--EDIT ROUTE-->
+@model Route
+<section class="page-section" id="map_section">
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-6  mx-auto text-center">
+            <h2 class="section-heading text-uppercase">Edit Route</h2>
+            <h3 class="section-subheading text-muted">Add a new destination. Route will be ordered by Arrival Date.</h3>
+
+        <form asp-action="CreateRoute" asp-controller="Admin" method="post">
+            <div class="form-group">
+
+                <label asp-for="City">City:</label>
+                <input type="text" class="form-control" asp-for="City">
+                <span class="valid" asp-validation-for="City"></span>
+
+                <label asp-for="Country">Country:</label>
+                <input type="text" class="form-control" asp-for="Country">
+                <span class="valid" asp-validation-for="Country"></span>
+
+                <label asp-for="ArrivalDate">Arrival Date:</label>
+                <input type="date" class="form-control" asp-for="ArrivalDate" placeholder="When you expect to arrive there">
+                <span class="valid" asp-validation-for="ArrivalDate"></span>
+                
+                <label asp-for="Img">Img URL:</label>
+                <input type="text" class="form-control" asp-for="Img" placeholder="Paste URL here">
+                <span class="valid" asp-validation-for="Img"></span>
+
+                <label asp-for="Desc">Description:</label>
+                <input type="text" class="form-control" asp-for="Desc">
+                <span class="valid" asp-validation-for="Desc"></span>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-info">Create a New Destination</button>
+            <br>
+            <br>
+            <h3 class="section-subheading text-muted">See result below</h3>
+
+        </form>
+ 
+
+
+        </div>
+        
+        </div>
+    </div>
+</section>
+    
+<!--SHOW NEW ROUTE-->
+
+<section class="page-section" id="route">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Route</h2>
+            <!--CURRENT YEAR-->
+            <h2 class="section-heading text-uppercase">2020</h2>
+
+            <h3 class="section-subheading text-muted">My sailing route for this year</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+            <ul class="timeline">
+
+                @* <li>
+                <div class="timeline-image">
+                    <div class="circle-avatar" style="background-image:url(https://images.pexels.com/photos/2007401/pexels-photo-2007401.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500)"></div>
+                </div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                    <h6 >February 2020</h6>
+                    <h6 class="subheading">Miami, USA</h6>
+                    </div>
+                    <div class="timeline-body">
+                    <p class="text-muted">Visit Boat Show. Spend couple weeks there.  Start sailing to Caribian see. Enjoi BVI.</p>
+                    </div>
+                </div>
+                </li> *@
+
+
+
+ <!--Is it safe to have url for delete?-->
+                @{
+                    bool isNotInverted = true;
+                }
+                @foreach(var route in ViewBag.AllRoutes)
+                {
+                    if(isNotInverted == true)
+                    {
+                        isNotInverted = false; 
+                        <li >
+                        <div class="timeline-image">
+                        <div class="circle-avatar" style="background-image:url(@route.Img)"></div>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h6>@route.ArrivalDate.ToString("MMMM dd")</h6>
+                                    <h6 class="subheading">@route.City, @route.Country</h6>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">@route.Desc</p>
+                                    <a href="/delete/@route.RouteId">Delete</a> 
+                                </div>
+                            </div>
+                        </li>
+                    }
+                    else
+                    { 
+                        isNotInverted = true;
+                        <li class="timeline-inverted">
+                        <div class="timeline-image">
+                        <div class="circle-avatar" style="background-image:url(@route.Img)"></div>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h6>@route.ArrivalDate.ToString("MMMM dd")</h6>
+                                    <h6 class="subheading">@route.City, @route.Country</h6>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">@route.Desc</p>
+                                   
+                                    <a href="/delete/@route.RouteId">Delete</a> 
+                                </div>
+                            </div>
+                        </li>
+                    }
+                }
+               
+                
+                <li class="timeline-inverted">
+                <div class="timeline-image">
+                    <h4>Be Part
+                    <br>Of 
+                    <br>WalkAbout!</h4>
+                </div>
+                </li>
+            </ul>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+
+   

@@ -1,0 +1,27 @@
+
+@{
+    if(ViewBag.UserId != null)
+    {
+
+        <section class="page-section" id="map_section">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading text-uppercase">Hello, @ViewBag.UserName</h2>
+                    <h3 class="section-subheading text-muted">Let's edit this page</h3>
+                    <a asp-action="Dashboard" asp-controller="Admin" asp-route-dash="dash">Dashboard</a>
+                    <a asp-action="Logout" asp-controller="Admin" asp-route-logout="logout">Logout</a>
+                </div>
+            </div>
+        </section>
+        
+    }
+    else
+    {
+       <div class="text-center">
+            <h2 class="section-heading text-uppercase">Uuuppsss</h2>
+            <h3 class="section-subheading text-muted">It seems you did not log in!</h3>
+             <p>Go to  <a asp-action="AdminIndex" asp-controller="Admin" asp-route-admin="admin">Admin Log in</a>
+            </p>
+        </div> 
+    }
+}

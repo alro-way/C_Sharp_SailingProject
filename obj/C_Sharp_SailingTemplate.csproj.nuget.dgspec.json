@@ -1,0 +1,73 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\ALEX_and_SASHA\\07 Training\\Coding Dojo\\c#_stack\\C_Sharp_Assignments\\C_Sharp_Project_TEST_GIT\\C_Sharp_SailingTemplate\\C_Sharp_SailingTemplate.csproj": {}
+  },
+  "projects": {
+    "D:\\ALEX_and_SASHA\\07 Training\\Coding Dojo\\c#_stack\\C_Sharp_Assignments\\C_Sharp_Project_TEST_GIT\\C_Sharp_SailingTemplate\\C_Sharp_SailingTemplate.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\ALEX_and_SASHA\\07 Training\\Coding Dojo\\c#_stack\\C_Sharp_Assignments\\C_Sharp_Project_TEST_GIT\\C_Sharp_SailingTemplate\\C_Sharp_SailingTemplate.csproj",
+        "projectName": "C_Sharp_SailingTemplate",
+        "projectPath": "D:\\ALEX_and_SASHA\\07 Training\\Coding Dojo\\c#_stack\\C_Sharp_Assignments\\C_Sharp_Project_TEST_GIT\\C_Sharp_SailingTemplate\\C_Sharp_SailingTemplate.csproj",
+        "packagesPath": "C:\\Users\\arbor\\.nuget\\packages\\",
+        "outputPath": "D:\\ALEX_and_SASHA\\07 Training\\Coding Dojo\\c#_stack\\C_Sharp_Assignments\\C_Sharp_Project_TEST_GIT\\C_Sharp_SailingTemplate\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\arbor\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
